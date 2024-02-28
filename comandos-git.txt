@@ -1,0 +1,446 @@
+1. Los primeros comandos los he utilizado para clonar en la carpeta PracticasSoftw de 
+mi ordenador el repositorio que he creado en mi cuenta de gitHub
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~
+$ pwd
+/c/Users/Teresa
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~
+$ cd Desktop
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop
+$ cd UMA
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA
+$ cd PracticasSoftw
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw
+$ git clone https://github.com/teresavgm/umafactorial.git
+Cloning into 'umafactorial'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw
+$ git branch
+fatal: not a git repository (or any of the parent directories): .git
+
+
+
+2. Voy al repositorio umafactorial
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw
+$ cd umafactorial
+
+3. Pido que me muestre las ramas para comprobar que estoy en la rama master
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git branch
+* master
+
+4. Creo el fichero factorial.java
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git touch factorial.java
+git: 'touch' is not a git command. See 'git --help'.
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ touch factorial.java
+
+5.Edito en Visual Studio Code el archivo factorial.java. Incluyo el código inicial.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ code factorial.java
+
+
+6.Guardo y añado los cambios que he realizado en el archivo factorial.java
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git add factorial.java
+
+
+7. Realizo el commit de esta primera implementacion
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git commit -m "implementacion inicial"
+[master 27d87b6] implementacion inicial
+ 1 file changed, 15 insertions(+)
+ create mode 100644 factorial.java
+
+
+
+8.Separo la implementacion en distintos metodos aparte.Tras hacer estos cambios en el fichero, 
+lo añado en un commit con el mensaje "refactorizacion"
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git add factorial.java
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git comit -m "refactorizacion"
+git: 'comit' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git commit -m "refactorizacion"
+[master 9633608] refactorizacion
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+
+
+9.Envio los cambios en la rama actual a mi repositorio en GitHub (utilizando git push).
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 828 bytes | 828.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote: fatal error in commit_refs
+To https://github.com/teresavgm/umafactorial.git
+ ! [remote rejected] master -> master (failure)
+error: failed to push some refs to 'https://github.com/teresavgm/umafactorial.git'
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 828 bytes | 828.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/teresavgm/umafactorial.git
+   be9e50b..9633608  master -> master
+
+
+
+10. Creo una nueva rama a la que llamo recursivo a la vez que muevo el espacio de trabajo
+a la misma.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git checkout -b recursivo
+Switched to a new branch 'recursivo'
+
+
+11. Realizo nuevos cambios en el archivo factorial.java mediante visual studio code
+y los añado mediante un commit cuyo mensaje sera "implementacion recursiva"
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (recursivo)
+$ git add factorial.java
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (recursivo)
+$ git commit -m "implementacion recursiva"
+[recursivo a44cb8d] implementacion recursiva
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+12. Subo la nueva implementación al repositorio de GitHub
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (recursivo)
+$ git push origin recursivo                              0 [sig] bash 1851! sigpacket::process: Suppressing signal 18 to win32 process (pid 11744)
+Counting objects: 100% (5/5), done.        200087 [sig] bash 1851! sigpacket::process: Suppressing signal 18 to win32 process (pid 11744)hreads
+Compressing objects: 100% (3/3),  378248 [sig] bash 1851! sigpacket::process: Suppressing signal 18 to win32 process (pid 11744)/3), 377 bytes | 377.00 KiB/s, done.
+Total 3 (delta 1), reuse 848784 [sig] bash 1851! sigpacket::process: Suppressing signal 18 to win32 process (pid 11744)ng deltas: 100% (1/1), completed with 1 local object.
+remote:        1402633 [sig] bash 1851! sigpacket::process: Suppressing signal 18 to win32 process (pid 11744): Create a pull request for 'recursivo' on GitHub by visiting:
+Merge made by the 'ort' strategy.
+ factorial.java | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+ * [new branch]      recursivo -> recursivo 
+
+13.Al introducir numeros negativos es incorrecto por lo que
+me desplazo a la rama master para corregir rapidamente este problema
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$
+ivo)
+$ git checkout master
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ ur branch is up to date with 'origin/master'.
+
+14. Realizo los cambios necesarios en el metodo main para corregir los problemas al introducir
+numeros negativos. Agnado la modificacion mediante un commmit cuyo mensaje es "correccion numeros negativos"
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (masterTeresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git add factorial.java
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (masterTeresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git commit -m "correccion numeros negativos"
+[master 57a6a5e] correccion numeros negativos
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ resa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ umerating objects: 5, done.
+
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ 
+
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$
+
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$
+
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$
+
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$
+
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+15. Envio los cambios de master al repositorio de GitHub.Me muevo a la rama recursivo para
+cambiar de if (num<=0) a if (num<=1). Luego agnado esta modificación mediante
+un commit con el mensaje optimizacion. Al ejecutar el comando git log siguiente se pueden ver estos
+pasos y los anteriores.Por ultimo, realizo el comando git merge recursivo desde la rama master 
+para mezclar los cambios necesarios. Aqui tuve un problema y no se ven alguno de los comandos 
+realizados pero al ejecutar git log se pueden observar.
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git log
+commit 5f11ed98179bbf2f43217e729bec88f8da7cc24a (HEAD -> master)
+Merge: 57a6a5e 93a491f
+Author: Teresa Vega <teresavegamar@gmail.com>
+Date:   Tue Feb 27 10:20:32 2024 +0100
+
+    Merge branch 'recursivo'
+
+commit 93a491f636d015e56704eba1b478b10e46728dbc (recursivo)
+Author: Teresa Vega <teresavegamar@gmail.com>
+Date:   Tue Feb 27 10:20:03 2024 +0100
+
+    optimizacion
+
+commit 57a6a5efe23ea61ae5f84191af496f10514dfdbe (origin/master, origin/HEAD)
+Author: Teresa Vega <teresavegamar@gmail.com>
+Date:   Tue Feb 27 10:16:57 2024 +0100
+
+    correccion numeros negativos
+
+commit a44cb8d5bd3d3ee7d4752814c7f5a469a91fabc5 (origin/recursivo)
+Author: Teresa Vega <teresavegamar@gmail.com>
+Date:   Tue Feb 27 10:14:08 2024 +0100
+
+    implementacion recursiva
+
+commit 963360873f7974a69641a17b84640cea74365b72
+Author: Teresa Vega <teresavegamar@gmail.com>
+Date:   Tue Feb 27 10:10:19 2024 +0100
+
+    refactorizacion
+
+commit 27d87b6d15bd69a80f88087741c066996fca203f
+Author: Teresa Vega <teresavegamar@gmail.com>
+Date:   Tue Feb 27 10:06:05 2024 +0100
+
+    implementacion inicial
+
+commit be9e50b99029f265bff9713351f7f1d2dd4e5c71
+Author: teresavgm <160473130+teresavgm@users.noreply.github.com>
+Date:   Tue Feb 27 09:46:38 2024 +0100
+
+    Initial commit
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/teresavgm/umafactorial.git'
+
+16. Compruebo la rama en la me encuentro trabajando
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git branch
+* master
+  recursivo
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git checkout -n refaclO
+error: unknown switch `n'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --[no-]guess          second guess 'git checkout <no-such-branch>' (default)
+    --[no-]overlay        use overlay mode (default)
+    -q, --[no-]quiet      suppress progress reporting
+    --[no-]recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --[no-]progress       force progress reporting
+    -m, --[no-]merge      perform a 3-way merge with the new branch
+    --[no-]conflict <style>
+                          conflict style (merge, diff3, or zdiff3)
+    -d, --[no-]detach     detach HEAD at named commit
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --[no-]force      force checkout (throw away local modifications)
+    --[no-]orphan <new-branch>
+                          new unparented branch
+    --[no-]overwrite-ignore
+                          update ignored files (default)
+    --[no-]ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --[no-]patch      select hunks interactively
+    --[no-]ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+17. Creo la rama refaclO a la vez que desplazo a esta mi entorno 
+de trabajo.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git checkout -b refaclO
+Switched to a new branch 'refaclO'
+
+18. Edito el codigo incluyendo el metodo getNumber()
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ code factorial.java
+
+
+19.Agnado los cambios con un commit que incluye el mensaje "refactorizacion del metodo
+de entrada".
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git add factorial.java
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git commit -m "refactorizacion de metodo
+de entrada"
+[refaclO 27527e7] refactorizacion de metodo de entrada
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+20. En esre punto llama un cliente quejándose de que no puede calcular el factorial 
+para entradas mayores que 20. Al no poder terminar el trabajo en este mismo momento
+guardo temporalmente en el stash los cambios que acabo de hacer al codigo ejecutando el 
+comanto git stash. 
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git stash
+Saved working directory and index state WIP on refaclO: 27527e7 refactorizacion de metodo de entrada
+
+21. Vuelvo a la rama master para editar el codigo.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+22. Cambio el codigo en visual code studio para usar BigInteger en lugar de log
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ code factorial.java
+
+23. Guardo y agnado los cambios realizados mediante un commit que incluye el mensaje
+"cambio de long a BigInteger"
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git add factorial.java
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git commit -m "cambio de long a BigInteger"
+[master 05d0652] cambio de long a BigInteger
+ 1 file changed, 10 insertions(+), 11 deletions(-)
+
+
+24. Envio los cambios de la rama master al repositorio en GitHub
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git push origin master
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.28 KiB | 1.28 MiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/teresavgm/umafactorial.git
+   57a6a5e..05d0652  master -> master
+
+25. Vuelvo a la rama refaclO
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git checkout refaclO
+Switched to branch 'refaclO'
+
+26.Recupero los cambios guardados antes de cambiar a la rama master utilizando este comando.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git stash pop
+On branch refaclO
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   factorial.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (3089b4e5d36aa1131b57e43bb35160cb0ade6721)
+
+27. Agnado los cambios que habia realizado antes del cambio de rama mediante un commit 
+incluyendo el mensaje "refactorizacion de metodo de salida".
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git add factorial.java
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git commit -m "refactorizacion de metodo de salida"
+[refaclO c2c0b6b] refactorizacion de metodo de salida
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+
+28. Vuelvo a la rama master
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (refaclO)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+
+29. Integro los cambios realizados en la rama refaclO en la rama master. Resuelvo los conflictos abriendo el archivo
+marcando los segmentos convenientes.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git merge refaclO
+Auto-merging factorial.java
+CONFLICT (content): Merge conflict in factorial.java
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+30. Agnado estos cambios con un commit con mensaje " mezcla de rama refaclO"
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master|MERGING)
+$ git add factorial.java
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master|MERGING)
+$ git commit -m "mezcla de
+rama refacIO"
+[master 0330d25] mezcla de rama refacIO
+
+
+31. Envio los cambios al repositorio en GitHub.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ git push origin master
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.21 KiB | 1.21 MiB/s, done.
+Total 9 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/teresavgm/umafactorial.git
+   05d0652..0330d25  master -> master
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ pwd
+/c/Users/Teresa/Desktop/UMA/PracticasSoftw/umafactorial
+
+32. Creo este fichero para documentar todo lo realizado.
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ touch comandos-git.txt
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$ code comandos-git.txt
+
+Teresa@DESKTOP-JOAPKM6 MINGW64 ~/Desktop/UMA/PracticasSoftw/umafactorial (master)
+$
